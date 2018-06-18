@@ -1,0 +1,47 @@
+{
+  "name": "npo-finder",
+  "version": "1.0.0",
+  "description": "Simple web app to find NPO by address.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CityOfDetroit/npo-finder.git"
+  },
+  "keywords": [
+    "NPO",
+    "Neighborhood",
+    "Police"
+  ],
+  "author": "Edgar Montes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CityOfDetroit/npo-finder/issues"
+  },
+  "homepage": "https://github.com/CityOfDetroit/npo-finder#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@mapbox/mapbox-gl-draw": "^1.0.9",
+    "@turf/turf": "^5.1.6",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.24.4",
+    "browserify": "^16.2.2",
+    "envify": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-sass": "^4.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "mapbox-gl": "^0.46.0-beta.1",
+    "mapbox-gl-geocoder": "^2.0.1",
+    "moment": "^2.22.2",
+    "terraformer-arcgis-parser": "^1.0.5",
+    "terraformer-wkt-parser": "^1.2.0",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
