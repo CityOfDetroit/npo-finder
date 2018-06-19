@@ -17,6 +17,9 @@ export default class Controller {
   initialLoad(controller){
     controller.dataManager.getAllData(controller);
   }
+  loadDefault(controller){
+    controller.panel.creatPanel('all', controller);
+  }
   geocoderResults(e, controller){
     let tempAddr = e.result.place_name.split(",");
     tempAddr = tempAddr[0];

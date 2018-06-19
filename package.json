@@ -38,10 +38,13 @@
     "gulp-sass": "^4.0.1",
     "isomorphic-fetch": "^2.2.1",
     "mapbox-gl": "^0.46.0-beta.1",
-    "mapbox-gl-geocoder": "^2.0.1",
     "moment": "^2.22.2",
     "terraformer-arcgis-parser": "^1.0.5",
     "terraformer-wkt-parser": "^1.2.0",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^2.3.0",
+    "mapbox-gl-geocoder": "^2.0.1"
   }
 }

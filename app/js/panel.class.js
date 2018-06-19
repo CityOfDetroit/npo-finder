@@ -4,31 +4,27 @@ export default class Panel {
   }
 
   creatPanel(type, controller){
-    let markup = controller.panel.createMarkup(type, controller);
+    let markup = null;
+    if(type == 'all'){
+      markup = controller.panel.createMarkup(controller.allNPOs, controller);
+      document.querySelector('#npo-results h2').innerText = "All NPOs";
+    }else{
+      markup = controller.panel.createMarkup(controller.tempNPO, controller);
+      document.querySelector('#npo-results h2').innerText = "Your NPO";
+    }
     document.querySelector('#npo-results .npo-content').innerHTML = markup;
     document.getElementById('npo-results').className = 'active';
   }
-  createMarkup(type, controller){
-    console.log(type);
-    console.log(controller);
-    let tempHTML = '';
-    // if(type == 'all'){
-    //   tempHTML = `
-    //   <article class="info-section">
-    //     <p><strong>NAME:</strong> ${values[7].data.features[0].attributes.NPO_Office}</p>
-    //     <p><strong>PHONE:</strong> ${values[7].data.features[0].attributes.Phone}</p>
-    //     <p><strong>Email:</strong> ${values[7].data.features[0].attributes.Email}</p>
-    //   </article>
-    //   `;
-    // }else{
-    //   tempHTML = `
-    //   <article class="info-section">
-    //     <p><strong>NAME:</strong> ${values[7].data.features[0].attributes.NPO_Office}</p>
-    //     <p><strong>PHONE:</strong> ${values[7].data.features[0].attributes.Phone}</p>
-    //     <p><strong>Email:</strong> ${values[7].data.features[0].attributes.Email}</p>
-    //   </article>
-    //   `;
-    // }
+  createMarkup(data, controller){
+    let tempHTML = `
+    ${data.map(npo =>
+      `<article class="info-section">
+        <p><strong>Name:</strong> ${npo.attributes.NPO_Office}</p>
+        <p><strong>Phone:</strong> ${npo.attributes.Phone}</p>
+        <p><strong>Email:</strong> ${npo.attributes.Email}</p>
+      </article>`
+    ).join('')}
+    `;
     return tempHTML;
   }
 }

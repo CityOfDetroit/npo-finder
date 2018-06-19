@@ -1,4 +1,6 @@
 'use strict';
+import "babel-polyfill";
+import "isomorphic-fetch";
 const moment = require('moment');
 const turf = require('@turf/turf');
 const arcGIS = require('terraformer-arcgis-parser');
@@ -7,18 +9,32 @@ export default class DataManager {
   constructor() {
   }
   getAllData(controller){
-    console.log(controller);
     let npo = new Promise((resolve, reject) => {
       let url = "https://services2.arcgis.com/qvkbeam7Wirps6zC/ArcGIS/rest/services/Neighborhood_Police_Officers/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=json&token=";
       return fetch(url)
       .then((resp) => resp.json()) // Transform the data into json
       .then(function(data) {
-        resolve({"id" : "allNPOs", "data": data});
+        resolve(data);
       });
     });
 
     Promise.all([npo]).then(values => {
-      controller.allNPOs = values;
+      let cleanList = [];
+      let names = [];
+      values[0].features.forEach(function(npo, index){
+        if(npo.attributes.NPO_Office != ' ' && npo.attributes.NPO_Office != null){
+          if(index == 0){
+            cleanList.push(npo);
+            names.push(npo.attributes.NPO_Office);
+          }else{
+            if(!names.includes(npo.attributes.NPO_Office)){
+              cleanList.push(npo);
+              names.push(npo.attributes.NPO_Office);
+            }
+          }
+        }
+      });
+      controller.allNPOs = cleanList;
       controller.panel.creatPanel('all', controller);
     }).catch(reason => {
       console.log(reason);
@@ -36,12 +52,12 @@ export default class DataManager {
       return fetch(url)
       .then((resp) => resp.json()) // Transform the data into json
       .then(function(data) {
-        resolve({"id" : "npo", "data": data});
+        resolve(data);
       });
     });
 
     Promise.all([npo]).then(values => {
-      controller.tempNPO = values;
+      controller.tempNPO = values[0].features;
       controller.panel.creatPanel('single', controller);
     }).catch(reason => {
       console.log(reason);
