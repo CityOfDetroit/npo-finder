@@ -1,0 +1,142 @@
+// NOTE: styles for map side panel view
+$base-duration: 500ms;
+$cubic: cubic-bezier(.64,.09,.08,1);
+// Colors
+$color-1: #004544;
+$color-2: #9fd5b3;
+$color-3: #E48F22;
+$color-4: #CF3234;
+$color-5: #444;
+$white: #fff;
+
+// Breakpoints
+$sm: new-breakpoint(min-width 551px);
+$med: new-breakpoint(min-width 1024px);
+$lg: new-breakpoint(min-width 1401px);
+
+// =============================================================================
+#map{
+  display: none;
+}
+#npo-search{
+  width: 40em;
+  padding: 1em;
+  display: flex;
+
+  #geocoder{
+    flex: 1;
+    padding-left: 1em;
+    color: $white;
+
+    .mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
+      border-bottom: .2em solid $color-1;
+      box-shadow: none;
+      background-color: transparent;
+      width: 100%;
+      border-radius: 0;
+
+      .geocoder-icon.geocoder-icon-search{
+        right: .5em;
+        left: auto;
+      }
+    }
+  }
+}
+
+#npo-results{
+  display: none;
+}
+
+#npo-results{
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 1em;
+
+  .npo-content{
+    display: flex;
+    flex-wrap: wrap;
+
+    .info-section{
+      margin-bottom: 1em;
+      padding: .5em;
+
+      span{
+        background-color: $color-3;
+        padding: .5em;
+        font-weight: bold;
+      }
+
+      div{
+        color: $white;
+        background-color: lighten($color-5, 5%);
+        padding: .5em;
+        margin-top: 1em;
+
+        h5{
+          border-bottom: .1em solid;
+        }
+
+        p{
+          margin: 0;
+
+          strong{
+            font-weight: bold;
+          }
+
+          a{
+            color: $white;
+          }
+        }
+      }
+
+      h4{
+        a{
+          color: $color-4;
+        }
+      }
+    }
+  }
+
+  #clear-services-btn{
+    position: absolute;
+    top: 0;
+    right: 2em;
+    padding: .25em .5em;
+    display: flex;
+    background-color: $color-4;
+    color: $white;
+    cursor: pointer;
+    transition: all $base-duration $cubic;
+
+    span{
+      margin: auto;
+    }
+  }
+
+  #clear-services-btn:hover{
+    padding: .4em .6em;
+    transition: all $base-duration $cubic;
+  }
+}
+// -----------------------------------------------------------------------------
+// NOTE: tablet starts.
+// -----------------------------------------------------------------------------
+@media all and (min-width: $sm) {
+  #npo-results.active{
+  }
+}
+// -----------------------------------------------------------------------------
+// NOTE: desktop starts.
+// -----------------------------------------------------------------------------
+@media all and (min-width: $med) {
+  #npo-results.active{
+  }
+}
+// -----------------------------------------------------------------------------
+// NOTE: xl desktop starts.
+// -----------------------------------------------------------------------------
+@media all and (min-width: $lg) {
+  #npo-results.active{
+  }
+}
