@@ -39,6 +39,18 @@ $lg: new-breakpoint(min-width 1401px);
         right: .5em;
         left: auto;
       }
+
+      input{
+        padding: .65em;
+        border: none;
+      }
+      input:focus{
+        border-color: transparent;
+      }
+
+      .geocoder-pin-right{
+        display: none;
+      }
     }
   }
 }
