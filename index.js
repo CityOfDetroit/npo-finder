@@ -25,7 +25,6 @@ import Controller from './js/controller.class.js';
   document.getElementById('clear-services-btn').addEventListener('click', function(){
     document.getElementById('npo-results').className = '';
     document.querySelector('.mapboxgl-ctrl-geocoder.mapboxgl-ctrl input').value = '';
-    document.querySelector('button.geocoder-icon.geocoder-icon-close').style.display = 'none';
     controller.loadDefault(controller);
   });
 })(window);

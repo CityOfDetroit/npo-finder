@@ -1,10 +1,4 @@
 'use strict';
-import "babel-polyfill";
-import "isomorphic-fetch";
-const moment = require('moment');
-const turf = require('@turf/turf');
-const arcGIS = require('terraformer-arcgis-parser');
-const WKT = require('terraformer-wkt-parser');
 export default class DataManager {
   constructor() {
   }

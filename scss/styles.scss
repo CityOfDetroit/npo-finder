@@ -35,13 +35,13 @@ $lg: new-breakpoint(min-width 1401px);
       width: 100%;
       border-radius: 0;
 
-      .geocoder-icon.geocoder-icon-search{
+      .mapboxgl-ctrl-geocoder--icon-search{
         right: .5em;
         left: auto;
       }
 
       input{
-        padding: .65em;
+        padding: .5em 2em .5em .5em;
         border: none;
       }
       input:focus{

@@ -2,9 +2,6 @@
 import Map from './map.class.js';
 import Panel from './panel.class.js';
 import DataManager from './data-manager.class.js';
-import mapboxgl from 'mapbox-gl';
-const turf = require('@turf/turf');
-const moment = require('moment');
 export default class Controller {
   constructor(map) {
     this.tempNPO = null;
