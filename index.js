@@ -1,4 +1,6 @@
 'use strict';
+import './node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import './scss/styles.scss';
 import Controller from './js/controller.class.js';
 (function(){
   let controller = new Controller({

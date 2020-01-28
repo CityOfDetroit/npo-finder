@@ -21,7 +21,12 @@ This project was created using:
 
 3. Run local instance.
     ```
-    $ parcel index.html
+    $ npm start
+    ```
+
+4. Run build.
+    ```
+    $ npm build
     ```
 ## Resources
 
