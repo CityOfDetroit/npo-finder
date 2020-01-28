@@ -61,4 +61,4 @@ typings/
 .next
 
 # Dev generate output
-dist
+dist/
