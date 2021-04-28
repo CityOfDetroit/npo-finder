@@ -4,8 +4,8 @@ Simple web app to find NPO by address.
 ## Getting Started
 
 This project was created using:
-    [Mapbox](https://docs.mapbox.com/mapbox-gl-js/api/) for web map rendering.
-    [Parcel](https://parceljs.org/) as a web application bundler.
+ - [Parcel](https://parceljs.org/) as a web application bundler.
+ - [Yarn](https://classic.yarnpkg.com/en/) to manage project dependencies.
 
 ## Setup Local Environment.
 
@@ -16,17 +16,17 @@ This project was created using:
 2. Install node dependencies.
 
     ```
-    $ npm install
+    $ yarn
     ```
 
 3. Run local instance.
     ```
-    $ npm start
+    $ yarn start
     ```
 
-4. Run build.
+4. Create production build.
     ```
-    $ npm build
+    $ yarn build
     ```
 ## Resources
 
