@@ -28,28 +28,12 @@ $lg: new-breakpoint(min-width 1401px);
     padding-left: 1em;
     color: $white;
 
-    .mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
-      border-bottom: .2em solid $color-1;
-      box-shadow: none;
-      background-color: transparent;
-      width: 100%;
-      border-radius: 0;
-
-      .mapboxgl-ctrl-geocoder--icon-search{
-        right: .5em;
-        left: auto;
+    form{
+      label{
+        color: #000;
       }
-
       input{
-        padding: .5em 2em .5em .5em;
-        border: none;
-      }
-      input:focus{
-        border-color: transparent;
-      }
-
-      .geocoder-pin-right{
-        display: none;
+        color: #000;
       }
     }
   }
