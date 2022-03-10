@@ -1,11 +1,12 @@
-# npo-finder
+# npo-finder [![Build Status](https://app.travis-ci.com/CityOfDetroit/npo-finder.svg?branch=dev)](https://travis-ci.com/CityOfDetroit/npo-finder)
 Simple web app to find NPO by address.
 
 ## Getting Started
 
 This project was created using:
- - [Parcel](https://parceljs.org/) as a web application bundler.
+ - [Webpack](https://webpack.js.org/) as a web application bundler.
  - [Yarn](https://classic.yarnpkg.com/en/) to manage project dependencies.
+ - [Cypress](https://www.cypress.io/) for testing.
 
 ## Setup Local Environment.
 
@@ -24,7 +25,12 @@ This project was created using:
     $ yarn start
     ```
 
-4. Create production build.
+4. Run test suite.
+    ```
+    $ yarn test
+    ```
+
+5. Create production build.
     ```
     $ yarn build
     ```
