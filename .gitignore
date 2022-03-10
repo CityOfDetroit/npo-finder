@@ -63,3 +63,7 @@ typings/
 
 # Dev generate output
 dist/
+
+# Cypress
+cypress/videos
+cypress/screenshots
